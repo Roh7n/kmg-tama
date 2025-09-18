@@ -55,9 +55,7 @@ function RootLayoutNav() {
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
-      <Stack
-        screenOptions={{ headerShown: false, animation: "slide_from_right" }}
-      />
+      <Stack screenOptions={{ headerShown: false }} />
     </ThemeProvider>
   );
 }

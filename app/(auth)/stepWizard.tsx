@@ -1,6 +1,6 @@
 import React, { JSX, useState } from "react";
 import { Button, Input, Paragraph, Text, XStack, YStack } from "tamagui";
-import BackAction from "components/BackAction";
+import BackAction from "../../components/BackAction";
 import { Keyboard } from "react-native";
 import { ArrowRight } from "@tamagui/lucide-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -157,7 +157,7 @@ export default function StepWizard() {
       flex={1}
       justify="space-between"
       bg="$background"
-      px="$2"
+      px="$4"
       pt={insets.top}
       pb={insets.bottom}
     >
@@ -185,17 +185,29 @@ export default function StepWizard() {
         </YStack>
       </YStack>
 
-      <YStack px="$2" mb="$2" gap="$2" width="100%">
+      <YStack px="$2" mb="$6" gap="$2" width="100%">
         {currentStep < totalSteps ? (
-          <Button onPress={goToNextStep} iconAfter={ArrowRight}>
+          <Button
+            onPress={goToNextStep}
+            iconAfter={ArrowRight}
+            rounded={30}
+            fontWeight="800"
+          >
             Continue
           </Button>
         ) : (
-          <Button onPress={handleSubmit}>Complete Registration</Button>
+          <Button onPress={handleSubmit} rounded={30} fontWeight="800">
+            Complete Registration
+          </Button>
         )}
 
         {currentStep > 1 && (
-          <Button onPress={goToPreviousStep} variant="outlined">
+          <Button
+            onPress={goToPreviousStep}
+            variant="outlined"
+            rounded={30}
+            fontWeight="800"
+          >
             Back
           </Button>
         )}
